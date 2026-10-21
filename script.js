@@ -219,10 +219,6 @@
     if (!canvas) return;
     sizeCanvas();
     window.addEventListener("resize", sizeCanvas, { passive: true });
-
-    if (!reduceMotion) {
-      setTimeout(function () { confettiCelebrate(true); }, 800);
-    }
   }  /* ---------------------------------------------------------
      4. Gallery lightbox
      --------------------------------------------------------- */
@@ -341,7 +337,7 @@
         if (!reduceMotion) {
           setTimeout(function () { confettiCelebrate(false); }, 220);
         }
-        toast("Wish made. Happy 18th, Cara 🎂", 4200);
+        toast("Wish made. Happy 18th chud 🎂", 4200);
       }
     }
 
@@ -493,11 +489,142 @@
   }
 
   /* ---------------------------------------------------------
+     9. Midnight gate
+     --------------------------------------------------------- */
+  var UNLOCK_AT = window.CARA_UNLOCK_AT || "";
+  var GATE_PEEK = !!window.CARA_GATE_PEEK;
+  /* Password that opens the site before midnight. Change this to whatever
+     you want to give her. Case and surrounding spaces are ignored. */
+  var GATE_PASSWORD = "cara18";
+  var GATE_STORE = "cara18.gate.open";
+  var GATE_TZ = "Asia/Manila";
+
+  function gateRemembered() {
+    try { return window.localStorage.getItem(GATE_STORE) === "1"; } catch (err) { return false; }
+  }
+
+  function gateRemember() {
+    try { window.localStorage.setItem(GATE_STORE, "1"); } catch (err) { /* private mode, fine */ }
+  }
+
+  function initGate() {
+    var gate = $("#gate");
+    var unlockAt = new Date(UNLOCK_AT);
+    var valid = UNLOCK_AT && !isNaN(unlockAt.getTime());
+    var alreadyOpen = !valid || GATE_PEEK || gateRemembered() || Date.now() >= unlockAt.getTime();
+
+    function mainEls() { return $$("main, footer, .topbar"); }
+
+    if (!gate || alreadyOpen) {
+      document.documentElement.setAttribute("data-gate", "open");
+      if (gate && gate.parentNode) gate.parentNode.removeChild(gate);
+      if (!reduceMotion) setTimeout(function () { confettiCelebrate(true); }, 800);
+      return false;
+    }
+
+    document.documentElement.setAttribute("data-gate", "locked");
+    gate.setAttribute("aria-hidden", "false");
+    mainEls().forEach(function (el) {
+      el.setAttribute("inert", "");
+      el.setAttribute("aria-hidden", "true");
+    });
+
+    var daysUnit = $("#gate-days-unit");
+    var daysSep = $("#gate-days-sep");
+    var dayEl = $("#gate-days");
+    var dayLabel = $("#gate-days-label");
+    var hourEl = $("#gate-hours");
+    var minEl = $("#gate-minutes");
+    var secEl = $("#gate-seconds");
+    var whenEl = $("#gate-when");
+
+    if (whenEl) {
+      try {
+        whenEl.textContent = new Intl.DateTimeFormat("en-AU", {
+          timeZone: GATE_TZ,
+          weekday: "long",
+          day: "numeric",
+          month: "long",
+          hour: "numeric",
+          minute: "2-digit",
+          hour12: true
+        }).format(unlockAt);
+      } catch (err) { whenEl.textContent = "Midnight, Manila time"; }
+    }
+
+    function pad(n) { return (n < 10 ? "0" : "") + n; }
+
+    var timer = null;
+
+    function unlock() {
+      if (timer) clearInterval(timer);
+      document.documentElement.setAttribute("data-gate", "open");
+      gate.setAttribute("aria-hidden", "true");
+      mainEls().forEach(function (el) {
+        el.removeAttribute("inert");
+        el.removeAttribute("aria-hidden");
+      });
+      window.scrollTo(0, 0);
+      setTimeout(function () {
+        if (gate.parentNode) gate.parentNode.removeChild(gate);
+      }, 900);
+      if (!reduceMotion) setTimeout(function () { confettiCelebrate(true); }, 300);
+      toast("Happy 18th chud 🎂", 4200);
+    }
+
+    function tick() {
+      var left = unlockAt.getTime() - Date.now();
+      if (left <= 0) { unlock(); return; }
+      var total = Math.floor(left / 1000);
+      var d = Math.floor(total / 86400);
+      var h = Math.floor((total % 86400) / 3600);
+      var m = Math.floor((total % 3600) / 60);
+      var s = total % 60;
+
+      if (daysUnit) {
+        daysUnit.hidden = d < 1;
+        if (daysSep) daysSep.hidden = d < 1;
+        if (dayLabel) dayLabel.textContent = d === 1 ? "day" : "days";
+        if (dayEl) dayEl.textContent = pad(d);
+      }
+      if (hourEl) hourEl.textContent = pad(h);
+      if (minEl) minEl.textContent = pad(m);
+      if (secEl) secEl.textContent = pad(s);
+    }
+
+    /* password bypass */
+    var form = $("#gate-pass");
+    var input = $("#gate-pass-input");
+    var msg = $("#gate-pass-msg");
+    if (form && input) {
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var given = (input.value || "").trim().toLowerCase();
+        if (given && given === GATE_PASSWORD.toLowerCase()) {
+          if (msg) msg.textContent = "";
+          gateRemember();
+          unlock();
+        } else {
+          form.classList.add("is-wrong");
+          if (msg) msg.textContent = given ? "Not that one. Try again." : "Type the password first.";
+          input.select();
+          setTimeout(function () { form.classList.remove("is-wrong"); }, 400);
+        }
+      });
+    }
+
+    tick();
+    timer = setInterval(tick, 1000);
+    document.addEventListener("visibilitychange", tick);
+    return true;
+  }
+  /* ---------------------------------------------------------
      Boot
      --------------------------------------------------------- */
   function boot() {
     initReveal();
     initConfetti();
+    initGate();
     initLightbox();
     initCake();
     initClocks();
