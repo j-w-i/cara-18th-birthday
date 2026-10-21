@@ -15,28 +15,11 @@ It's also on GitHub Pages (the link above), so you can just send that link. To s
 any static host works - this repo is set up so that pushing to `main` republishes the site.
 The page is marked `noindex`, so search engines will leave it alone.
 
-## The midnight gate
-
-The site stays locked behind a countdown until **12:00am on her birthday, Manila time**, then
-opens itself (no refresh needed) with a confetti burst.
-
-- **Unlock time:** in `index.html`, near the top, the first `<script>` block:
-  `var UNLOCK_AT = "2026-10-22T00:00:00+08:00";` — `+08:00` is Manila, so don't drop the offset.
-  Change the date if her birthday is a different day.
-- **Password:** in `script.js`, `var GATE_PASSWORD = "cara18";`. Type it into the box on the
-  countdown screen to open the site early. Once used, that browser remembers it (localStorage),
-  so it won't ask again. Case and surrounding spaces are ignored.
-- **Skip it entirely:** add `?peek` to the end of the URL to see the site without the gate.
-  Handy for checking your own edits.
-
-If you'd rather not have a gate at all, set `UNLOCK_AT` to a date in the past (or delete the
-`<div class="gate">` block) and the site opens straight away.
-
 ## Visit log (who opened it, and where)
 
 Every time the **hosted** page is opened it sends one small message to a free
 [ntfy.sh](https://ntfy.sh) topic, so you can see when it was opened, from roughly where, on what
-device, and whether they got past the countdown.
+device and at what time.
 
 - **Watch it:** <https://ntfy.sh/cara18-visits-7qabomli>
 - **Get it on your phone:** install the ntfy app, subscribe to the topic above, and each open
@@ -46,8 +29,8 @@ device, and whether they got past the countdown.
 Each entry looks like:
 
 ```
-Countdown opened (not unlocked yet)
-Status: countdown only (locked)
+Cara's page was opened
+Status: opened
 From: Canberra, Australian Capital Territory, Australia · Australian Academic and Research Network
 Their clock: 22 Oct 2026, 1:30 am (Australia/Sydney)
 Device: desktop · 1200x800
@@ -55,9 +38,8 @@ Came from: direct link
 Language: en-GB
 ```
 
-States you'll see: `countdown only (locked)` (they looked but it isn't open yet),
-`unlocked at midnight`, `unlocked with the password`, `opened (password remembered)`,
-`peek (gate skipped)`.
+(The title is a notification heading; "Status: opened" is the body line. Everything below it is
+where it came from, on what, and when.)
 
 - **Where it's set:** `VISIT_LOG_TOPIC` near the bottom of `script.js`. Set it to `""` to switch
   logging off. The topic name is the only "key": anyone who knows it can read the log, and it's in

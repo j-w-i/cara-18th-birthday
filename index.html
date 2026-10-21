@@ -17,68 +17,9 @@
 <body>
 <script>document.documentElement.classList.add('js');</script>
 
-<script>
-/* ------------------------------------------------------------------
-   BIRTHDAY GATE
-   The site stays locked until midnight, Cara's time (Asia/Manila).
-   Change UNLOCK_AT to the instant her birthday starts.
-   Format: "YYYY-MM-DDTHH:MM:SS+08:00"  (+08:00 = Manila; keep it).
-   The gate also accepts a password so you can open it early (see GATE_PASSWORD
-   in script.js). Add ?peek to the end of the URL to skip the gate entirely.
-   ------------------------------------------------------------------ */
-(function () {
-  var UNLOCK_AT = "2026-10-22T00:00:00+08:00";
-  window.CARA_UNLOCK_AT = UNLOCK_AT;
-  var peek = /(?:^|[?&#])peek(=1)?(?:$|[&#])/.test(location.search + location.hash);
-  window.CARA_GATE_PEEK = peek;
-  var remembered = false;
-  try { remembered = localStorage.getItem("cara18.gate.open") === "1"; } catch (err) { /* private mode */ }
-  var at = new Date(UNLOCK_AT).getTime();
-  var locked = !isNaN(at) && Date.now() < at && !peek && !remembered;
-  document.documentElement.setAttribute("data-gate", locked ? "locked" : "open");
-})();
-</script><a class="skip-link" href="#main">Skip to the letter</a>
+<a class="skip-link" href="#main">Skip to the letter</a>
 <canvas id="confetti" aria-hidden="true"></canvas>
 
-<svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
-  <filter id="gate-blur"><feGaussianBlur stdDeviation="26" /></filter>
-</svg>
-
-<div class="gate" id="gate" role="dialog" aria-modal="true" aria-labelledby="gate-title">
-  <div class="gate-bg" aria-hidden="true">
-    <img src="assets/img/cara-hero.jpg" alt="" />
-  </div>
-  <div class="gate-inner" tabindex="-1">
-    <p class="eyebrow">A small thing for a big day</p>
-    <p class="gate-title" id="gate-title">Not quite yet chud</p>
-    <p class="gate-sub">This opens at midnight, your time.</p>
-
-    <div class="gate-count" aria-hidden="true">
-      <div class="gate-unit" id="gate-days-unit" hidden><b id="gate-days">00</b><span id="gate-days-label">days</span></div>
-      <div class="gate-sep" id="gate-days-sep" hidden>·</div>
-      <div class="gate-unit"><b id="gate-hours">00</b><span>hours</span></div>
-      <div class="gate-sep">:</div>
-      <div class="gate-unit"><b id="gate-minutes">00</b><span>minutes</span></div>
-      <div class="gate-sep">:</div>
-      <div class="gate-unit"><b id="gate-seconds">00</b><span>seconds</span></div>
-    </div>
-
-    <p class="gate-when" id="gate-when"></p>
-    <p class="gate-note">It unlocks by itself, no need to refresh.</p>
-    <form class="gate-pass" id="gate-pass" novalidate>
-      <label class="gate-pass-label" for="gate-pass-input">Got the password? Open it early</label>
-      <div class="gate-pass-row">
-        <input class="gate-pass-input" id="gate-pass-input" type="password" name="password"
-               autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="password"
-               aria-describedby="gate-pass-msg" aria-label="Password" />
-        <button class="gate-pass-btn" type="submit">Open</button>
-      </div>
-      <p class="gate-pass-msg" id="gate-pass-msg" role="status" aria-live="polite"></p>
-    </form>
-
-    <p class="sr-only" id="gate-sr">This page opens at midnight, Manila time.</p>
-  </div>
-</div>
 <header class="topbar">
   <div class="topbar-inner">
     <a class="brand" href="#top">for <span>Cara</span></a>
