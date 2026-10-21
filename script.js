@@ -519,10 +519,12 @@
       document.documentElement.setAttribute("data-gate", "open");
       if (gate && gate.parentNode) gate.parentNode.removeChild(gate);
       if (!reduceMotion) setTimeout(function () { confettiCelebrate(true); }, 800);
+      logVisit(GATE_PEEK ? "peek (gate skipped)" : (gateRemembered() ? "opened (password remembered)" : "opened (after midnight)"));
       return false;
     }
 
     document.documentElement.setAttribute("data-gate", "locked");
+    logVisit("countdown only (locked)");
     gate.setAttribute("aria-hidden", "false");
     var gateInner = $(".gate-inner", gate);
     if (gateInner) setTimeout(function () { gateInner.focus({ preventScroll: true }); }, 60);
@@ -558,8 +560,9 @@
 
     var timer = null;
 
-    function unlock() {
+    function unlock(how) {
       if (timer) clearInterval(timer);
+      logVisit(how === "password" ? "unlocked with the password" : "unlocked at midnight");
       document.documentElement.setAttribute("data-gate", "open");
       gate.setAttribute("aria-hidden", "true");
       mainEls().forEach(function (el) {
@@ -578,7 +581,7 @@
 
     function tick() {
       var left = unlockAt.getTime() - Date.now();
-      if (left <= 0) { unlock(); return; }
+      if (left <= 0) { unlock("time"); return; }
       var total = Math.floor(left / 1000);
       var d = Math.floor(total / 86400);
       var h = Math.floor((total % 86400) / 3600);
@@ -607,7 +610,7 @@
         if (given && given === GATE_PASSWORD.toLowerCase()) {
           if (msg) msg.textContent = "";
           gateRemember();
-          unlock();
+          unlock("password");
         } else {
           form.classList.add("is-wrong");
           if (msg) msg.textContent = given ? "Not that one. Try again." : "Type the password first.";
@@ -621,6 +624,97 @@
     timer = setInterval(tick, 1000);
     document.addEventListener("visibilitychange", tick);
     return true;
+  }
+  /* ---------------------------------------------------------
+     10. Visit log
+     One small message per open, to a free ntfy.sh topic. No account,
+     no cookies: the page posts "someone opened this, from here, at
+     this time" and you read it in the ntfy web page or app.
+     Set VISIT_LOG_TOPIC to "" to turn logging off completely.
+     --------------------------------------------------------- */
+  var VISIT_LOG_TOPIC = "cara18-visits-7qabomli";
+
+  function visitLogTopic() {
+    var qs = location.search + location.hash;
+    if (/nolog/i.test(qs)) return "";
+    var m = /[?&#]log=([^&#]+)/.exec(qs);
+    return m ? decodeURIComponent(m[1]) : VISIT_LOG_TOPIC;
+  }
+
+  function visitGeo() {
+    if (!window.fetch || !window.AbortController) return Promise.resolve(null);
+    var ctrl = new AbortController();
+    var timer = setTimeout(function () { ctrl.abort(); }, 4000);
+    return fetch("https://ipwho.is/", { signal: ctrl.signal })
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        clearTimeout(timer);
+        if (!d || d.success === false) return null;
+        return {
+          city: d.city || "",
+          region: d.region || "",
+          country: d.country || "",
+          isp: (d.connection && d.connection.isp) || ""
+        };
+      })
+      .catch(function () { clearTimeout(timer); return null; });
+  }
+
+  function visitWhere(geo) {
+    if (!geo) return "unknown (ip lookup blocked or offline)";
+    var parts = [geo.city, geo.region, geo.country].filter(function (s) { return s; });
+    var place = parts.join(", ") || "unknown";
+    return geo.isp ? place + " · " + geo.isp : place;
+  }
+
+  function visitDevice() {
+    var ua = navigator.userAgent || "";
+    var kind = /iPad|Tablet/i.test(ua) ? "tablet"
+      : (/Mobile|Android|iPhone|iPod/i.test(ua) ? "phone" : "desktop");
+    return kind + " · " + window.innerWidth + "x" + window.innerHeight;
+  }
+
+  function visitLocalTime() {
+    var tz = "";
+    try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ""; } catch (err) {}
+    var now;
+    try {
+      now = new Intl.DateTimeFormat("en-AU", { dateStyle: "medium", timeStyle: "short" }).format(new Date());
+    } catch (err) { now = new Date().toISOString(); }
+    return now + (tz ? " (" + tz + ")" : "");
+  }
+
+  function logVisit(state) {
+    var topic = visitLogTopic();
+    if (!topic || !window.fetch) return;
+    if (location.protocol === "file:") return; // local previews stay quiet
+
+    visitGeo().then(function (geo) {
+      var lines = [
+        "Status: " + state,
+        "From: " + visitWhere(geo),
+        "Their clock: " + visitLocalTime(),
+        "Device: " + visitDevice(),
+        "Came from: " + (document.referrer || "direct link"),
+        "Language: " + (navigator.language || "?")
+      ];
+      var payload = {
+        topic: topic,
+        title: state.indexOf("countdown") === 0
+          ? "Countdown opened (not unlocked yet)"
+          : "Cara's page was opened",
+        message: lines.join("\n"),
+        tags: ["cake"],
+        priority: 3
+      };
+      try {
+        fetch("https://ntfy.sh", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        }).catch(function () { /* offline: nothing to do */ });
+      } catch (err) { /* ignore */ }
+    });
   }
   /* ---------------------------------------------------------
      Boot
