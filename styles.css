@@ -1218,9 +1218,15 @@ p { margin: 0 0 1.05em; }
   -webkit-backdrop-filter: blur(16px);
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.35s ease, visibility 0.35s ease;
+  /* visibility flips instantly on open (so the dialog can take focus) but is
+     delayed on close so the fade-out still plays */
+  transition: opacity 0.35s ease, visibility 0s linear 0.35s;
 }
-.lightbox[aria-hidden="false"] { opacity: 1; visibility: visible; }
+.lightbox[aria-hidden="false"] {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.35s ease, visibility 0s linear 0s;
+}
 
 .lb-figure {
   margin: 0;
