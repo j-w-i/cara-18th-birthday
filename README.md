@@ -19,7 +19,7 @@ The page is marked `noindex`, so search engines will leave it alone.
 
 1. **Hero** - her name and photo, with a confetti burst on load.
 2. **A letter** - the actual message, set like a real letter on paper.
-3. **Photos** - 8 photos in a gallery, tap one to open it full size (arrow keys / Esc work too).
+3. **Photos** - a gallery of 7 photos, tap one to open it full size (arrow keys / Esc work too).
 4. **18 things about you** - 18 short lines, for 18 years.
 5. **The cake** - a cake with 18 candles. Tap each flame to blow it out; when all 18 are out you
    get the wish message, confetti and a "light them again" link. There's also a
@@ -48,9 +48,9 @@ Change `MY_TZ` to your own IANA time zone (e.g. `"Europe/London"`, `"America/Tor
 label in `index.html` (`My time <span>· Sydney</span>`) to match.
 
 **Photos.** They live in `assets/img/`. To swap one, replace the file (keep it under ~400KB and
-around 1400px on the long side), or point the `<img src="...">` at a different file. Captions are
-in the `figcaption` and in the `data-caption` attribute (used by the full-size viewer), and the
-`alt` text should describe the photo.
+around 1400px on the long side), or point the `<img src="...">` at a different file. There are no
+visible captions - the only text attached to a photo is its `alt` attribute, which screen readers
+read out, so keep that accurate.
 
 **Wording.** All of the copy is plain HTML in `index.html`, so you can edit any of it directly.
 
@@ -59,7 +59,7 @@ in the `figcaption` and in the `data-caption` attribute (used by the full-size v
 - `index.html` - the page and all the text.
 - `styles.css` - styling. Colours and fonts are CSS variables at the top.
 - `script.js` - confetti, gallery viewer, candles, clocks, scroll reveals, easter egg.
-- `assets/img/` - the 8 optimised photos (about 1.4MB total) plus `manifest.json`.
+- `assets/img/` - the 7 optimised photos (about 1.2MB total) plus `manifest.json`.
 - `assets/fonts/` - self-hosted Playfair Display, Inter and Great Vibes (SIL Open Font License).
 - `preview/` - screenshots of the finished page.
 - `photos_raw/` - the original photos as they came out of the zip. Nothing is referenced from
@@ -68,7 +68,7 @@ in the `figcaption` and in the `data-caption` attribute (used by the full-size v
 
 Note: the Instagram DM/story screenshots and the video from the zip were deliberately left out -
 they had private chat content, a student ID and app UI over the top, so they didn't belong on a
-page she might show people. The site only uses the 8 clean photos. For the same reason
+page she might show people. The site only uses the 7 clean photos. For the same reason
 `photos_raw/` and the original zip are in `.gitignore`: the public repo only contains the 8
 curated photos.
 

@@ -192,7 +192,6 @@
     if (!shots.length) return;
 
     var imgEl = $("#lb-img");
-    var capEl = $("#lb-caption");
     var btnClose = $("#lb-close");
     var btnPrev = $("#lb-prev");
     var btnNext = $("#lb-next");
@@ -206,7 +205,6 @@
       current = (index + shots.length) % shots.length;
       imgEl.src = img.currentSrc || img.src;
       imgEl.alt = img.alt || "";
-      capEl.textContent = shot.getAttribute("data-caption") || "";
       box.setAttribute("aria-hidden", "false");
       document.body.classList.add("lb-open");
     }
