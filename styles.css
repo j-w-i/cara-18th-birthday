@@ -1458,6 +1458,10 @@ body.lb-open { overflow: hidden; }
 html[data-gate="locked"],
 html[data-gate="locked"] body { overflow: hidden; }
 
+/* nothing behind the gate is reachable, including the skip link */
+html[data-gate="locked"] .skip-link { display: none; }
+html[data-gate="locked"] .gate-inner:focus { outline: none; }
+
 .gate { display: none; }
 
 html[data-gate="locked"] .gate,

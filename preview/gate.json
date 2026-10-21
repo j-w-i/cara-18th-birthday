@@ -1,0 +1,693 @@
+{
+  "url": "file:///C:/Users/jwalr/Cara%27s%2018th%20Birthday%20Website/index.html",
+  "title": "Happy 18th Birthday, Cara 🎂",
+  "viewport": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 1,
+    "clientWidth": 1440,
+    "clientHeight": 900,
+    "scrollWidth": 1440,
+    "scrollHeight": 7536,
+    "hasHorizontalScroll": false,
+    "hasVerticalScroll": true,
+    "horizontalOverflowPx": 0
+  },
+  "images": [
+    {
+      "src": "file:///C:/Users/jwalr/Cara%27s%2018th%20Birthday%20Website/assets/img/cara-hero.jpg",
+      "alt": "",
+      "complete": true,
+      "naturalWidth": 1199,
+      "naturalHeight": 1600,
+      "renderedW": 1737,
+      "renderedH": 1086,
+      "top": -93,
+      "left": -149,
+      "inViewport": true
+    },
+    {
+      "src": "file:///C:/Users/jwalr/Cara%27s%2018th%20Birthday%20Website/assets/img/cara-hero.jpg",
+      "alt": "Cara, smiling, standing outdoors in a white top",
+      "complete": true,
+      "naturalWidth": 1199,
+      "naturalHeight": 1600,
+      "renderedW": 477,
+      "renderedH": 597,
+      "top": 174,
+      "left": 836,
+      "inViewport": true
+    },
+    {
+      "src": "file:///C:/Users/jwalr/Cara%27s%2018th%20Birthday%20Website/assets/img/cara-hero.jpg",
+      "alt": "Cara smiling outdoors in a white sleeveless top",
+      "complete": true,
+      "naturalWidth": 1199,
+      "naturalHeight": 1600,
+      "renderedW": 377,
+      "renderedH": 503,
+      "top": 2934,
+      "left": 131,
+      "inViewport": false
+    },
+    {
+      "src": "assets/img/cara-graduation.jpg",
+      "alt": "Cara in her Ateneo graduation gown holding her diploma and medal",
+      "complete": false,
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "renderedW": 377,
+      "renderedH": 502,
+      "top": 3461,
+      "left": 131,
+      "inViewport": false
+    },
+    {
+      "src": "assets/img/cara-smile.jpg",
+      "alt": "Close-up of Cara smiling in a car",
+      "complete": false,
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "renderedW": 377,
+      "renderedH": 502,
+      "top": 2934,
+      "left": 532,
+      "inViewport": false
+    },
+    {
+      "src": "assets/img/cara-calm.jpg",
+      "alt": "Cara looking at the camera in a car",
+      "complete": false,
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "renderedW": 377,
+      "renderedH": 282,
+      "top": 3460,
+      "left": 532,
+      "inViewport": false
+    },
+    {
+      "src": "assets/img/cara-pout.jpg",
+      "alt": "Cara pulling a small pout in a car",
+      "complete": false,
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "renderedW": 377,
+      "renderedH": 282,
+      "top": 3767,
+      "left": 532,
+      "inViewport": false
+    },
+    {
+      "src": "assets/img/cara-stripes.jpg",
+      "alt": "Cara taking a close-up selfie in a striped t-shirt",
+      "complete": false,
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "renderedW": 377,
+      "renderedH": 669,
+      "top": 2934,
+      "left": 932,
+      "inViewport": false
+    },
+    {
+      "src": "assets/img/cara-gradscreen.jpg",
+      "alt": "The Ateneo graduation screen showing Cara's name and portrait",
+      "complete": false,
+      "naturalWidth": 0,
+      "naturalHeight": 0,
+      "renderedW": 377,
+      "renderedH": 626,
+      "top": 3627,
+      "left": 932,
+      "inViewport": false
+    },
+    {
+      "src": "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==",
+      "alt": "",
+      "complete": true,
+      "naturalWidth": 1,
+      "naturalHeight": 1,
+      "renderedW": 1,
+      "renderedH": 1,
+      "top": 450,
+      "left": 720,
+      "inViewport": true
+    }
+  ],
+  "brokenImages": [],
+  "placeholderImages": [],
+  "imagesMissingAlt": [],
+  "backgroundImages": [],
+  "overflowX": [
+    {
+      "sel": "div.gate-bg",
+      "tag": "div",
+      "left": -149,
+      "right": 1589,
+      "width": 1737,
+      "text": ""
+    },
+    {
+      "sel": "img",
+      "tag": "img",
+      "left": -149,
+      "right": 1589,
+      "width": 1737,
+      "text": ""
+    },
+    {
+      "sel": "div.hero-glow.hero-glow--a",
+      "tag": "div",
+      "left": 892,
+      "right": 1555,
+      "width": 664,
+      "text": ""
+    },
+    {
+      "sel": "div.hero-glow.hero-glow--b",
+      "tag": "div",
+      "left": -182,
+      "right": 409,
+      "width": 590,
+      "text": ""
+    }
+  ],
+  "clipped": [
+    {
+      "sel": "div#gate.gate",
+      "scrollWidth": 1589,
+      "clientWidth": 1440,
+      "text": "A SMALL THING FOR A BIG DAY Not quite yet chud This opens at"
+    },
+    {
+      "sel": "p#gate-sr.sr-only",
+      "scrollWidth": 301,
+      "clientWidth": 1,
+      "text": "This page opens at midnight, Manila time."
+    },
+    {
+      "sel": "section#top.hero",
+      "scrollWidth": 1555,
+      "clientWidth": 1440,
+      "text": "IT'S YOUR BIRTHDAY Happy 18th birthday, Cara You're an adult"
+    }
+  ],
+  "interactive": [
+    {
+      "sel": "a.skip-link",
+      "tag": "a",
+      "name": "Skip to the letter",
+      "href": "#main",
+      "disabled": false
+    },
+    {
+      "sel": "input#gate-pass-input.gate-pass-input",
+      "tag": "input",
+      "name": "",
+      "href": "",
+      "disabled": false
+    },
+    {
+      "sel": "button.gate-pass-btn",
+      "tag": "button",
+      "name": "OPEN",
+      "href": "",
+      "disabled": false
+    },
+    {
+      "sel": "a.brand",
+      "tag": "a",
+      "name": "FOR CARA",
+      "href": "#top",
+      "disabled": false
+    },
+    {
+      "sel": "a",
+      "tag": "a",
+      "name": "LETTER",
+      "href": "#letter",
+      "disabled": false
+    },
+    {
+      "sel": "a",
+      "tag": "a",
+      "name": "PHOTOS",
+      "href": "#photos",
+      "disabled": false
+    },
+    {
+      "sel": "a",
+      "tag": "a",
+      "name": "18 THINGS",
+      "href": "#eighteen",
+      "disabled": false
+    },
+    {
+      "sel": "a",
+      "tag": "a",
+      "name": "THE CAKE",
+      "href": "#wish",
+      "disabled": false
+    },
+    {
+      "sel": "a",
+      "tag": "a",
+      "name": "CALL ME",
+      "href": "#call",
+      "disabled": false
+    },
+    {
+      "sel": "a.btn.btn--primary",
+      "tag": "a",
+      "name": "READ THE LETTER",
+      "href": "#letter",
+      "disabled": false
+    },
+    {
+      "sel": "a.btn.btn--ghost",
+      "tag": "a",
+      "name": "BLOW OUT THE CANDLES",
+      "href": "#wish",
+      "disabled": false
+    },
+    {
+      "sel": "a.scroll-cue",
+      "tag": "a",
+      "name": "KEEP SCROLLING",
+      "href": "#letter",
+      "disabled": false
+    },
+    {
+      "sel": "figure.shot.reveal",
+      "tag": "figure",
+      "name": "Cara smiling outdoors in a white sleeveless top",
+      "href": "",
+      "disabled": false
+    },
+    {
+      "sel": "figure.shot.reveal",
+      "tag": "figure",
+      "name": "Cara in her Ateneo graduation gown holding her diploma and medal",
+      "href": "",
+      "disabled": false
+    },
+    {
+      "sel": "figure.shot.reveal",
+      "tag": "figure",
+      "name": "Close-up of Cara smiling in a car",
+      "href": "",
+      "disabled": false
+    },
+    {
+      "sel": "figure.shot.reveal",
+      "tag": "figure",
+      "name": "Cara looking at the camera in a car",
+      "href": "",
+      "disabled": false
+    },
+    {
+      "sel": "figure.shot.reveal",
+      "tag": "figure",
+      "name": "Cara pulling a small pout in a car",
+      "href": "",
+      "disabled": false
+    },
+    {
+      "sel": "figure.shot.reveal",
+      "tag": "figure",
+      "name": "Cara taking a close-up selfie in a striped t-shirt",
+      "href": "",
+      "disabled": false
+    },
+    {
+      "sel": "figure.shot.reveal",
+      "tag": "figure",
+      "name": "The Ateneo graduation screen showing Cara's name and portrait",
+      "href": "",
+      "disabled": false
+    },
+    {
+      "sel": "button.candle",
+      "tag": "button",
+      "name": "Candle 1 of 18, blow it out",
+      "href": "",
+      "disabled": false
+    },
+    {
+      "sel": "button.candle",
+      "tag": "button",
+      "name": "Candle 2 of 18, blow it out",
+      "href": "",
+      "disabled": false
+    },
+    {
+      "sel": "button.candle",
+      "tag": "button",
+      "name": "Candle 3 of 18, blow it out",
+      "href": "",
+      "disabled": false
+    },
+    {
+      "sel": "button.candle",
+      "tag": "button",
+      "name": "Candle 4 of 18, blow it out",
+      "href": "",
+      "disabled": false
+    },
+    {
+      "sel": "button.candle",
+      "tag": "button",
+      "name": "Candle 5 of 18, blow it out",
+      "href": "",
+      "disabled": false
+    },
+    {
+      "sel": "button.candle",
+      "tag": "button",
+      "name": "Candle 6 of 18, blow it out",
+      "href": "",
+      "disabled": false
+    },
+    {
+      "sel": "button.candle",
+      "tag": "button",
+      "name": "Candle 7 of 18, blow it out",
+      "href": "",
+      "disabled": false
+    },
+    {
+      "sel": "button.candle",
+      "tag": "button",
+      "name": "Candle 8 of 18, blow it out",
+      "href": "",
+      "disabled": false
+    },
+    {
+      "sel": "button.candle",
+      "tag": "button",
+      "name": "Candle 9 of 18, blow it out",
+      "href": "",
+      "disabled": false
+    },
+    {
+      "sel": "button.candle",
+      "tag": "button",
+      "name": "Candle 10 of 18, blow it out",
+      "href": "",
+      "disabled": false
+    },
+    {
+      "sel": "button.candle",
+      "tag": "button",
+      "name": "Candle 11 of 18, blow it out",
+      "href": "",
+      "disabled": false
+    },
+    {
+      "sel": "button.candle",
+      "tag": "button",
+      "name": "Candle 12 of 18, blow it out",
+      "href": "",
+      "disabled": false
+    },
+    {
+      "sel": "button.candle",
+      "tag": "button",
+      "name": "Candle 13 of 18, blow it out",
+      "href": "",
+      "disabled": false
+    },
+    {
+      "sel": "button.candle",
+      "tag": "button",
+      "name": "Candle 14 of 18, blow it out",
+      "href": "",
+      "disabled": false
+    },
+    {
+      "sel": "button.candle",
+      "tag": "button",
+      "name": "Candle 15 of 18, blow it out",
+      "href": "",
+      "disabled": false
+    },
+    {
+      "sel": "button.candle",
+      "tag": "button",
+      "name": "Candle 16 of 18, blow it out",
+      "href": "",
+      "disabled": false
+    },
+    {
+      "sel": "button.candle",
+      "tag": "button",
+      "name": "Candle 17 of 18, blow it out",
+      "href": "",
+      "disabled": false
+    },
+    {
+      "sel": "button.candle",
+      "tag": "button",
+      "name": "Candle 18 of 18, blow it out",
+      "href": "",
+      "disabled": false
+    },
+    {
+      "sel": "button#blow-all.linkish",
+      "tag": "button",
+      "name": "Blow them all out at once",
+      "href": "",
+      "disabled": false
+    },
+    {
+      "sel": "button#relight.linkish",
+      "tag": "button",
+      "name": "Light them again",
+      "href": "",
+      "disabled": false
+    },
+    {
+      "sel": "a.to-top",
+      "tag": "a",
+      "name": "BACK TO THE TOP ↑",
+      "href": "#top",
+      "disabled": false
+    },
+    {
+      "sel": "button#lb-close.lb-close",
+      "tag": "button",
+      "name": "Close photo viewer",
+      "href": "",
+      "disabled": false
+    },
+    {
+      "sel": "button#lb-prev.lb-nav.lb-prev",
+      "tag": "button",
+      "name": "Previous photo",
+      "href": "",
+      "disabled": false
+    },
+    {
+      "sel": "button#lb-next.lb-nav.lb-next",
+      "tag": "button",
+      "name": "Next photo",
+      "href": "",
+      "disabled": false
+    }
+  ],
+  "unnamedControls": [
+    "input#gate-pass-input.gate-pass-input"
+  ],
+  "headings": [
+    {
+      "tag": "h1",
+      "text": "Happy 18th birthday,"
+    },
+    {
+      "tag": "h2",
+      "text": "A letter for you"
+    },
+    {
+      "tag": "h2",
+      "text": "The photos I've got"
+    },
+    {
+      "tag": "h2",
+      "text": "18 things about you"
+    },
+    {
+      "tag": "h2",
+      "text": "Eighteen candles, one wish"
+    },
+    {
+      "tag": "h2",
+      "text": "Call me whenever"
+    }
+  ],
+  "landmarks": {
+    "header": 6,
+    "nav": 1,
+    "main": 1,
+    "footer": 1,
+    "section": 6,
+    "sectionsWithLabel": 0,
+    "formsWithLabel": 0
+  },
+  "colourSamples": [
+    {
+      "sel": "body",
+      "color": "rgb(239, 229, 218)",
+      "bg": "rgb(11, 7, 16)",
+      "fontSize": "15.12px",
+      "fontWeight": "400",
+      "text": "A SMALL THING FOR A BIG DAY Not quite yet chud This opens at"
+    },
+    {
+      "sel": "p",
+      "color": "rgb(233, 196, 140)",
+      "bg": "rgb(11, 7, 16)",
+      "fontSize": "10.88px",
+      "fontWeight": "600",
+      "text": "A SMALL THING FOR A BIG DAY"
+    },
+    {
+      "sel": "li",
+      "color": "rgba(239, 229, 218, 0.58)",
+      "bg": "rgb(11, 7, 16)",
+      "fontSize": "11.52px",
+      "fontWeight": "400",
+      "text": "18 YEARS OLD"
+    },
+    {
+      "sel": "a",
+      "color": "rgb(35, 22, 42)",
+      "bg": "rgb(233, 196, 140)",
+      "fontSize": "12px",
+      "fontWeight": "600",
+      "text": "Skip to the letter"
+    },
+    {
+      "sel": "h1",
+      "color": "rgb(247, 239, 227)",
+      "bg": "rgb(11, 7, 16)",
+      "fontSize": "55.2px",
+      "fontWeight": "600",
+      "text": "Happy 18th birthday,"
+    },
+    {
+      "sel": "h2",
+      "color": "rgb(247, 239, 227)",
+      "bg": "rgb(11, 7, 16)",
+      "fontSize": "56px",
+      "fontWeight": "600",
+      "text": "A letter for you"
+    },
+    {
+      "sel": "button",
+      "color": "rgb(35, 22, 42)",
+      "bg": "rgb(11, 7, 16)",
+      "fontSize": "11.2px",
+      "fontWeight": "600",
+      "text": "OPEN"
+    }
+  ],
+  "fontFaces": [
+    {
+      "family": "Playfair Display",
+      "weight": "400",
+      "style": "normal",
+      "status": "loaded"
+    },
+    {
+      "family": "Playfair Display",
+      "weight": "400",
+      "style": "italic",
+      "status": "loaded"
+    },
+    {
+      "family": "Playfair Display",
+      "weight": "600",
+      "style": "normal",
+      "status": "loaded"
+    },
+    {
+      "family": "Playfair Display",
+      "weight": "700",
+      "style": "normal",
+      "status": "loaded"
+    },
+    {
+      "family": "Inter",
+      "weight": "300",
+      "style": "normal",
+      "status": "loaded"
+    },
+    {
+      "family": "Inter",
+      "weight": "400",
+      "style": "normal",
+      "status": "loaded"
+    },
+    {
+      "family": "Inter",
+      "weight": "500",
+      "style": "normal",
+      "status": "loaded"
+    },
+    {
+      "family": "Inter",
+      "weight": "600",
+      "style": "normal",
+      "status": "loaded"
+    },
+    {
+      "family": "Great Vibes",
+      "weight": "400",
+      "style": "normal",
+      "status": "loaded"
+    }
+  ],
+  "fontChecks": [
+    {
+      "sel": "body",
+      "fontFamily": "Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "used": true
+    },
+    {
+      "sel": "h1",
+      "fontFamily": "\"Playfair Display\", \"Iowan Old Style\", Georgia, \"Times New Roman\", serif",
+      "used": true
+    },
+    {
+      "sel": "h2",
+      "fontFamily": "\"Playfair Display\", \"Iowan Old Style\", Georgia, \"Times New Roman\", serif",
+      "used": true
+    },
+    {
+      "sel": "p",
+      "fontFamily": "Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "used": true
+    },
+    {
+      "sel": "button",
+      "fontFamily": "Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "used": true
+    },
+    {
+      "sel": ".letter",
+      "fontFamily": "Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+      "used": true
+    }
+  ],
+  "placeholders": [],
+  "bodyText": "A SMALL THING FOR A BIG DAY\n\nNot quite yet chud\n\nThis opens at midnight, your time.\n\n03\nHOURS\n:\n57\nMINUTES\n:\n48\nSECONDS\n\nTHURSDAY 22 OCTOBER AT 12:00 AM\n\nIt unlocks by itself, no need to refresh.\n\nGOT THE PASSWORD? OPEN IT EARLY\nOPEN\n\nThis page opens at midnight, Manila time.\n\nFOR CARA\nLETTER\nPHOTOS\n18 THINGS\nTHE CAKE\nCALL ME\n\nIT'S YOUR BIRTHDAY\n\nHappy 18th birthday,\n\nCara\n\nYou're an adult now. Weird. I made you this instead of buying a card, so have a look around. There's a letter, some photos I've got of you, and a cake you have to blow out yourself.\n\nREAD THE LETTER\nBLOW OUT THE CANDLES\n18\nYEARS OLD\n1\nMONKEY CHUD\n∞\nRESPONSIBILITIES\n18\nKEEP SCROLLING\n\nFIRST\n\nA letter for you\n\nI did write this properly, so no skimming.\n\nFOR CARA · ON HER BIRTHDAY\n\nH\nappy 18th birthday Cara! You're 18. That's mad. You're legally an adult now, which is a weird thing to say about a monkey chud.\n\nYou can drink legally now. Not that that was ever stopping you, lmao. You can vote too if you can be bothered. And apparently the responsibilities are coming? As if you didn't already have them. You've been acting like you're 40 for years.\n\nI hope you have a good day. I hope the rest of the celebrations are just as good, and I hope you're with the people who make you happy. Let them spoil you a bit, you've earned it.\n\nHalf a world away, still one of my favourite people.\n\nI'm really glad I met you. We're a long way apart and on completely different clocks, but out of everyone I talk to, you're one of my favourites. I don't take that for granted.\n\nThe gift is small. I know. But I wanted to do something more than just send a happy birthday message, even if this is a bit much. I hope it makes today a bit better.\n\nI'm free basically all day if you want to call. Just message me first. Seriously, ring me, text me, send me a photo of your cake and I'll answer.\n\nP.S. You're an adult now, so technically you're allowed to be the responsible one. Don't rush into it.\n\nalways, your friend\n\nSECOND\n\nThe photos I've got\n\nMy favourites out of everything I've saved. Tap one to make it bigger.\n\nTHIRD\n\n18 things about you\n\nSome of these are jokes. Most of them aren't.\n\n01\n\nYou can drink legally now. Not that it was ever stopping you.\n\n02\n\nYour laugh. It's so loud, and I can hear it through the phone.\n\n03\n\nThe judgy look.\n\n04\n\nYou say what everyone's thinking and then act innocent.\n\n05\n\n3am conversations with you feel completely normal at this point.\n\n06\n\nMonkey chud energy. Nobody else could pull it off.\n\n07\n\nCertified underage babysitter.\n\n08\n\nYou show up when it matters and never make a thing of it.\n\n09\n\nYour camera roll is diabolical.\n\n10\n\nYou're funnier than most people I know in real life.\n\n11\n\nYou give good advice even when you're not trying to.\n\n12\n\nYou always have to have the last say.\n\n13\n\nYou've been running your own life since forever. You'll be fine at this.\n\n14\n\nYou care more than you let on.\n\n15\n\nYou do things your own way, even when it's unhinged. Respect.\n\n16\n\nYour music taste is questionable and I'm not changing my mind.\n\n17\n\nPeople are glad they know you. Me included.\n\n18\n\nAnd now you're 18, so the rest of us have to catch up.\n\nFOURTH\n\nEighteen candles, one wish\n\nGo on, blow them out. Tap each flame.\n\n18\n\n18 CANDLES STILL LIT.\n\nBlow them all out at once\n\nWISH MADE\n\nI'm not allowed to know what you wished for, but I hope you get it.\n\nLAST THING\n\nCall me whenever\n\nI'm free all day. Just message me first so I'm not mid-mouthful.\n\nYOUR TIME · MANILA\n\n8:02 pm\n\nWednesday 21 Oct\n\nPROBABLY AWAKE\n\nMY TIME · SYDNEY\n\n11:02 pm\n\nWednesday 21 Oct\n\nPROBABLY STILL AWAKE\n\nDifferent clocks, same day, mostly. Ring me, text me, or send me a photo of your cake and I'll reply way too fast. I mean it, I'm around all day.\n\nFREE ALL DAY\nI'LL PICK UP\nYES, EVEN AT 3AM\n\nhappy 18th, chud\n\nMade by me, for you. Have a good one.\n\nBACK TO THE TOP ↑",
+  "bodyTextLength": 3856,
+  "reducedMotion": false,
+  "readyState": "complete",
+  "consoleErrors": [],
+  "exceptions": [],
+  "failedRequests": [],
+  "browserLogs": [],
+  "cdpErrorCount": 0
+}

@@ -337,7 +337,7 @@
         if (!reduceMotion) {
           setTimeout(function () { confettiCelebrate(false); }, 220);
         }
-        toast("Wish made. Happy 18th chud 🎂", 4200);
+        toast("Wish made. Happy 18th, Cara 🎂", 4200);
       }
     }
 
@@ -524,6 +524,8 @@
 
     document.documentElement.setAttribute("data-gate", "locked");
     gate.setAttribute("aria-hidden", "false");
+    var gateInner = $(".gate-inner", gate);
+    if (gateInner) setTimeout(function () { gateInner.focus({ preventScroll: true }); }, 60);
     mainEls().forEach(function (el) {
       el.setAttribute("inert", "");
       el.setAttribute("aria-hidden", "true");
@@ -569,7 +571,7 @@
         if (gate.parentNode) gate.parentNode.removeChild(gate);
       }, 900);
       if (!reduceMotion) setTimeout(function () { confettiCelebrate(true); }, 300);
-      toast("Happy 18th chud 🎂", 4200);
+      toast("Happy 18th, Cara 🎂", 4200);
     }
 
     function tick() {
