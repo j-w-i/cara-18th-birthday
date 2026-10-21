@@ -69,7 +69,7 @@ read out, so keep that accurate.
 Note: the Instagram DM/story screenshots and the video from the zip were deliberately left out -
 they had private chat content, a student ID and app UI over the top, so they didn't belong on a
 page she might show people. The site only uses the 7 clean photos. For the same reason
-`photos_raw/` and the original zip are in `.gitignore`: the public repo only contains the 8
+`photos_raw/` and the original zip are in `.gitignore`: the public repo only contains the 7
 curated photos.
 
 ## Publishing

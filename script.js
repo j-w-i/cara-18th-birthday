@@ -219,7 +219,7 @@
     function open(index) {
       lastFocused = document.activeElement;
       show(index);
-      btnClose.focus();
+      requestAnimationFrame(function () { btnClose.focus(); });
     }
 
     shots.forEach(function (shot, i) {
@@ -315,6 +315,23 @@
       candle.setAttribute("tabindex", "0");
       candle.dataset.index = i;
     });
+
+    var rowEl = $(".candles", cake);
+    if (rowEl) {
+      rowEl.addEventListener("click", function (e) {
+        if (e.target && e.target.closest && e.target.closest(".candle")) return;
+        var lit = candles.filter(function (c) { return !c.classList.contains("out"); });
+        if (!lit.length) return;
+        var best = null;
+        var bestDist = Infinity;
+        lit.forEach(function (c) {
+          var r = c.getBoundingClientRect();
+          var d = Math.abs((r.left + r.right) / 2 - e.clientX);
+          if (d < bestDist) { bestDist = d; best = c; }
+        });
+        if (best) extinguish(best, true);
+      });
+    }
 
     if (blowAll) {
       blowAll.addEventListener("click", function () {

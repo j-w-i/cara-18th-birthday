@@ -17,6 +17,7 @@
 <body>
 <script>document.documentElement.classList.add('js');</script>
 
+<a class="skip-link" href="#main">Skip to the letter</a>
 <canvas id="confetti" aria-hidden="true"></canvas>
 
 <header class="topbar">
@@ -33,7 +34,7 @@
   <div class="progress-track" aria-hidden="true"><div class="progress-bar" id="progress-bar"></div></div>
 </header>
 
-<main>
+<main id="main">
   <!-- ───────────────────────────── HERO ───────────────────────────── -->
   <section class="hero" id="top">
     <div class="hero-glow hero-glow--a" aria-hidden="true"></div>
@@ -129,25 +130,25 @@
       </header>
 
       <div class="masonry" id="gallery">
-        <figure class="shot reveal" tabindex="0" role="button" aria-label="Open photo 1 of 7">
+        <figure class="shot reveal" tabindex="0" role="button">
           <img src="assets/img/cara-hero.jpg" alt="Cara smiling outdoors in a white sleeveless top" width="1199" height="1600" loading="lazy" />
         </figure>
-        <figure class="shot reveal" tabindex="0" role="button" aria-label="Open photo 2 of 7">
+        <figure class="shot reveal" tabindex="0" role="button">
           <img src="assets/img/cara-graduation.jpg" alt="Cara in her Ateneo graduation gown holding her diploma and medal" width="1201" height="1600" loading="lazy" />
         </figure>
-        <figure class="shot reveal" tabindex="0" role="button" aria-label="Open photo 3 of 7">
+        <figure class="shot reveal" tabindex="0" role="button">
           <img src="assets/img/cara-smile.jpg" alt="Close-up of Cara smiling in a car" width="1050" height="1400" loading="lazy" />
         </figure>
-        <figure class="shot reveal" tabindex="0" role="button" aria-label="Open photo 4 of 7">
+        <figure class="shot reveal" tabindex="0" role="button">
           <img src="assets/img/cara-calm.jpg" alt="Cara looking at the camera in a car" width="1320" height="990" loading="lazy" />
         </figure>
-        <figure class="shot reveal" tabindex="0" role="button" aria-label="Open photo 5 of 7">
+        <figure class="shot reveal" tabindex="0" role="button">
           <img src="assets/img/cara-pout.jpg" alt="Cara pulling a small pout in a car" width="1320" height="990" loading="lazy" />
         </figure>
-        <figure class="shot reveal" tabindex="0" role="button" aria-label="Open photo 6 of 7">
+        <figure class="shot reveal" tabindex="0" role="button">
           <img src="assets/img/cara-stripes.jpg" alt="Cara taking a close-up selfie in a striped t-shirt" width="788" height="1400" loading="lazy" />
         </figure>
-        <figure class="shot reveal" tabindex="0" role="button" aria-label="Open photo 7 of 7">
+        <figure class="shot reveal" tabindex="0" role="button">
           <img src="assets/img/cara-gradscreen.jpg" alt="The Ateneo graduation screen showing Cara's name and portrait" width="843" height="1400" loading="lazy" />
         </figure>      </div>
     </div>
@@ -234,7 +235,7 @@
           <button class="linkish" type="button" id="relight" hidden>Light them again</button>
         </p>
 
-        <div class="wish-card" id="wish-card" aria-hidden="true">
+        <div class="wish-card" id="wish-card" role="status" aria-hidden="true">
           <p class="wish-eyebrow">Wish made</p>
           <p class="wish-text">I'm not allowed to know what you wished for, but I hope you get it.</p>
         </div>
