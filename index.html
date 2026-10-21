@@ -31,8 +31,10 @@
   window.CARA_UNLOCK_AT = UNLOCK_AT;
   var peek = /(?:^|[?&#])peek(=1)?(?:$|[&#])/.test(location.search + location.hash);
   window.CARA_GATE_PEEK = peek;
+  var remembered = false;
+  try { remembered = localStorage.getItem("cara18.gate.open") === "1"; } catch (err) { /* private mode */ }
   var at = new Date(UNLOCK_AT).getTime();
-  var locked = !isNaN(at) && Date.now() < at && !peek;
+  var locked = !isNaN(at) && Date.now() < at && !peek && !remembered;
   document.documentElement.setAttribute("data-gate", locked ? "locked" : "open");
 })();
 </script><a class="skip-link" href="#main">Skip to the letter</a>
@@ -91,7 +93,7 @@
   <div class="progress-track" aria-hidden="true"><div class="progress-bar" id="progress-bar"></div></div>
 </header>
 
-<main id="main">
+<main id="main" tabindex="-1">
   <!-- ───────────────────────────── HERO ───────────────────────────── -->
   <section class="hero" id="top">
     <div class="hero-glow hero-glow--a" aria-hidden="true"></div>

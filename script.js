@@ -567,6 +567,8 @@
         el.removeAttribute("aria-hidden");
       });
       window.scrollTo(0, 0);
+      var mainEl = document.getElementById("main");
+      if (mainEl) setTimeout(function () { mainEl.focus({ preventScroll: true }); }, 120);
       setTimeout(function () {
         if (gate.parentNode) gate.parentNode.removeChild(gate);
       }, 900);

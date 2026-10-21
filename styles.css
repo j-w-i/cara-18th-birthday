@@ -1393,7 +1393,7 @@ body.lb-open { overflow: hidden; }
   font-size: 0.6rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: rgba(239, 229, 218, 0.42);
+  color: rgba(239, 229, 218, 0.60);
   margin-bottom: 10px;
 }
 
@@ -1557,7 +1557,7 @@ html[data-gate="open"] .gate { opacity: 0; pointer-events: none; }
   font-size: 0.58rem;
   letter-spacing: 0.24em;
   text-transform: uppercase;
-  color: rgba(239, 229, 218, 0.5);
+  color: rgba(239, 229, 218, 0.66);
 }
 
 .gate-sep {
@@ -1578,7 +1578,7 @@ html[data-gate="open"] .gate { opacity: 0; pointer-events: none; }
 
 .gate-note {
   font-size: 0.78rem;
-  color: rgba(239, 229, 218, 0.42);
+  color: rgba(239, 229, 218, 0.58);
   margin: 0;
 }
 /* ============================================================
