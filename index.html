@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Happy 18th Birthday, Cara 🎂</title>
+<meta name="description" content="A small website for Cara's 18th birthday. A letter, some photos, eighteen candles to blow out." />
+<meta name="robots" content="noindex" />
+<meta name="theme-color" content="#0c0810" />
+<meta property="og:title" content="Happy 18th Birthday, Cara" />
+<meta property="og:description" content="A letter, some photos and eighteen candles. Made for your birthday." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="assets/img/cara-hero.jpg" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='88'%3E%F0%9F%8E%82%3C/text%3E%3C/svg%3E" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<script>document.documentElement.classList.add('js');</script>
+
+<canvas id="confetti" aria-hidden="true"></canvas>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="#top">for <span>Cara</span></a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#letter">Letter</a>
+      <a href="#photos">Photos</a>
+      <a href="#eighteen">18 Things</a>
+      <a href="#wish">The Cake</a>
+      <a href="#call">Call Me</a>
+    </nav>
+  </div>
+  <div class="progress-track" aria-hidden="true"><div class="progress-bar" id="progress-bar"></div></div>
+</header>
+
+<main>
+  <!-- ───────────────────────────── HERO ───────────────────────────── -->
+  <section class="hero" id="top">
+    <div class="hero-glow hero-glow--a" aria-hidden="true"></div>
+    <div class="hero-glow hero-glow--b" aria-hidden="true"></div>
+
+    <div class="wrap hero-grid">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">It's your birthday</p>
+        <h1 class="hero-title">
+          Happy <span class="eighteen" id="easter-eighteen">18</span>th birthday,
+        </h1>
+        <p class="hero-name">Cara</p>
+        <p class="hero-lede">
+          You're an adult now. Weird. I made you this instead of buying a card,
+          so have a look around. There's a letter, some photos I've got of you,
+          and a cake you have to blow out yourself.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn--primary" href="#letter">Read the letter</a>
+          <a class="btn btn--ghost" href="#wish">Blow out the candles</a>
+        </div>
+        <ul class="hero-facts">
+          <li><b>18</b> years old</li>
+          <li><b>1</b> monkey chud</li>
+          <li><b>∞</b> responsibilities</li>
+        </ul>
+      </div>
+
+      <figure class="hero-photo reveal" style="--d:140">
+        <div class="arch" id="hero-arch">
+          <img src="assets/img/cara-hero.jpg" alt="Cara, smiling, standing outdoors in a white top" width="1199" height="1600" fetchpriority="high" />
+        </div>
+        <span class="seal" aria-hidden="true">18</span>
+      </figure>
+    </div>
+
+    <a class="scroll-cue" href="#letter">
+      <span class="scroll-cue-line" aria-hidden="true"></span>
+      <span>keep scrolling</span>
+    </a>
+  </section>
+
+  <!-- ──────────────────────────── THE LETTER ──────────────────────────── -->
+  <section class="section" id="letter">
+    <div class="wrap">
+      <header class="section-head reveal">
+        <p class="eyebrow">First</p>
+        <h2>A letter for you</h2>
+        <p class="section-sub">I did write this properly, so no skimming.</p>
+      </header>
+
+      <article class="letter reveal">
+        <div class="letter-inner">
+          <p class="letter-meta">For Cara <span aria-hidden="true">·</span> on her birthday</p>
+
+          <p><span class="dropcap">H</span>appy 18th birthday Cara! You're 18. That's mad. You're
+            legally an adult now, which is a weird thing to say about a monkey chud.</p>
+
+          <p>You can drink legally now. Not that that was ever stopping you, lmao. You can vote too
+            if you can be bothered. And apparently the responsibilities are coming? As if you didn't
+            already have them. You've been acting like you're 40 for years.</p>
+
+          <p>I hope you have a good day. I hope the rest of the celebrations are just as good, and I
+            hope you're with the people who make you happy. Let them spoil you a bit, you've earned it.</p>
+
+          <blockquote class="pull">Half a world away, still one of my favourite people.</blockquote>
+
+          <p>I'm really glad I met you. We're a long way apart and on completely different clocks,
+            but out of everyone I talk to, you're one of my favourites. I don't take that for granted.</p>
+
+          <p>The gift is small. I know. But I wanted to do something more than just send a happy
+            birthday message, even if this is a bit much. I hope it makes today a bit better.</p>
+
+          <p>I'm free basically all day if you want to call. Just message me first. Seriously, ring
+            me, text me, send me a photo of your cake and I'll answer.</p>
+
+          <p class="ps">P.S. You're an adult now, so technically you're allowed to be the responsible
+            one. Don't rush into it.</p>
+
+          <p class="sign">always, your friend</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ──────────────────────────── THE PHOTOS ──────────────────────────── -->
+  <section class="section" id="photos">
+    <div class="wrap">
+      <header class="section-head reveal">
+        <p class="eyebrow">Second</p>
+        <h2>The photos I've got</h2>
+        <p class="section-sub">My favourites out of everything I've saved. Tap one to make it bigger.</p>
+      </header>
+
+      <div class="masonry" id="gallery">
+        <figure class="shot reveal" tabindex="0" role="button" aria-label="Open photo: you, obviously" data-caption="you, obviously">
+          <img src="assets/img/cara-hero.jpg" alt="Cara smiling in a white sleeveless top outdoors, trees behind her" width="1199" height="1600" loading="lazy" />
+          <figcaption>you, obviously</figcaption>
+        </figure>
+        <figure class="shot reveal" tabindex="0" role="button" aria-label="Open photo: graduation day" data-caption="graduation day">
+          <img src="assets/img/cara-graduation.jpg" alt="Cara in her Ateneo graduation gown holding her diploma and medal" width="1201" height="1600" loading="lazy" />
+          <figcaption>graduation day</figcaption>
+        </figure>
+        <figure class="shot reveal" tabindex="0" role="button" aria-label="Open photo: two countries, one very bad connection" data-caption="two countries, one very bad connection">
+          <img src="assets/img/us-video-call.jpg" alt="Cara on a video call, waving at the camera, with me in the corner" width="788" height="1400" loading="lazy" />
+          <figcaption>two countries, one very bad connection</figcaption>
+        </figure>
+        <figure class="shot reveal" tabindex="0" role="button" aria-label="Open photo: the smile" data-caption="the smile">
+          <img src="assets/img/cara-smile.jpg" alt="Close-up of Cara smiling in a car" width="1050" height="1400" loading="lazy" />
+          <figcaption>the smile</figcaption>
+        </figure>
+        <figure class="shot reveal" tabindex="0" role="button" aria-label="Open photo: no idea what you were thinking here" data-caption="no idea what you were thinking here">
+          <img src="assets/img/cara-calm.jpg" alt="Cara looking calmly at the camera in a car" width="1320" height="990" loading="lazy" />
+          <figcaption>no idea what you were thinking here</figcaption>
+        </figure>
+        <figure class="shot reveal" tabindex="0" role="button" aria-label="Open photo: the pout" data-caption="the pout">
+          <img src="assets/img/cara-pout.jpg" alt="Cara pulling a small pout in a car" width="1320" height="990" loading="lazy" />
+          <figcaption>the pout</figcaption>
+        </figure>
+        <figure class="shot reveal" tabindex="0" role="button" aria-label="Open photo: stripes" data-caption="stripes">
+          <img src="assets/img/cara-stripes.jpg" alt="Cara taking a close-up selfie in a striped t-shirt" width="788" height="1400" loading="lazy" />
+          <figcaption>stripes</figcaption>
+        </figure>
+        <figure class="shot reveal" tabindex="0" role="button" aria-label="Open photo: your name on the big screen" data-caption="your name on the big screen">
+          <img src="assets/img/cara-gradscreen.jpg" alt="The Ateneo graduation screen showing Cara's name and portrait" width="843" height="1400" loading="lazy" />
+          <figcaption>your name on the big screen</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────── 18 THINGS ─────────────────────────── -->
+  <section class="section" id="eighteen">
+    <div class="wrap">
+      <header class="section-head reveal">
+        <p class="eyebrow">Third</p>
+        <h2>18 things about you</h2>
+        <p class="section-sub">Some of these are jokes. Most of them aren't.</p>
+      </header>
+
+      <ol class="things" id="things">
+        <li class="thing reveal"><span class="thing-num">01</span><p>You can drink legally now. Not that it was ever stopping you.</p></li>
+        <li class="thing reveal"><span class="thing-num">02</span><p>Your laugh. It's so loud, and I can hear it through the phone.</p></li>
+        <li class="thing reveal"><span class="thing-num">03</span><p>The judgy look.</p></li>
+        <li class="thing reveal"><span class="thing-num">04</span><p>You say what everyone's thinking and then act innocent.</p></li>
+        <li class="thing reveal"><span class="thing-num">05</span><p>3am conversations with you feel completely normal at this point.</p></li>
+        <li class="thing reveal"><span class="thing-num">06</span><p>Monkey chud energy. Nobody else could pull it off.</p></li>
+        <li class="thing reveal"><span class="thing-num">07</span><p>Certified underage babysitter.</p></li>
+        <li class="thing reveal"><span class="thing-num">08</span><p>You show up when it matters and never make a thing of it.</p></li>
+        <li class="thing reveal"><span class="thing-num">09</span><p>Your camera roll is diabolical.</p></li>
+        <li class="thing reveal"><span class="thing-num">10</span><p>You're funnier than most people I know in real life.</p></li>
+        <li class="thing reveal"><span class="thing-num">11</span><p>You give good advice even when you're not trying to.</p></li>
+        <li class="thing reveal"><span class="thing-num">12</span><p>You always have to have the last say.</p></li>
+        <li class="thing reveal"><span class="thing-num">13</span><p>You've been running your own life since forever. You'll be fine at this.</p></li>
+        <li class="thing reveal"><span class="thing-num">14</span><p>You care more than you let on.</p></li>
+        <li class="thing reveal"><span class="thing-num">15</span><p>You do things your own way, even when it's unhinged. Respect.</p></li>
+        <li class="thing reveal"><span class="thing-num">16</span><p>Your music taste is questionable and I'm not changing my mind.</p></li>
+        <li class="thing reveal"><span class="thing-num">17</span><p>People are glad they know you. Me included.</p></li>
+        <li class="thing reveal"><span class="thing-num">18</span><p>And now you're 18, so the rest of us have to catch up.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ──────────────────────────── THE CAKE ──────────────────────────── -->
+  <section class="section cake-section" id="wish">
+    <div class="wrap">
+      <header class="section-head reveal">
+        <p class="eyebrow">Fourth</p>
+        <h2>Eighteen candles, one wish</h2>
+        <p class="section-sub">Go on, blow them out. Tap each flame.</p>
+      </header>
+
+      <div class="cake-stage reveal">
+        <div class="cake" id="cake" role="group" aria-label="Birthday cake with eighteen candles">
+          <div class="candles">
+            <button class="candle" type="button" aria-label="Candle 1 of 18, blow it out"><span class="flame"></span><span class="smoke"></span></button>
+            <button class="candle" type="button" aria-label="Candle 2 of 18, blow it out"><span class="flame"></span><span class="smoke"></span></button>
+            <button class="candle" type="button" aria-label="Candle 3 of 18, blow it out"><span class="flame"></span><span class="smoke"></span></button>
+            <button class="candle" type="button" aria-label="Candle 4 of 18, blow it out"><span class="flame"></span><span class="smoke"></span></button>
+            <button class="candle" type="button" aria-label="Candle 5 of 18, blow it out"><span class="flame"></span><span class="smoke"></span></button>
+            <button class="candle" type="button" aria-label="Candle 6 of 18, blow it out"><span class="flame"></span><span class="smoke"></span></button>
+            <button class="candle" type="button" aria-label="Candle 7 of 18, blow it out"><span class="flame"></span><span class="smoke"></span></button>
+            <button class="candle" type="button" aria-label="Candle 8 of 18, blow it out"><span class="flame"></span><span class="smoke"></span></button>
+            <button class="candle" type="button" aria-label="Candle 9 of 18, blow it out"><span class="flame"></span><span class="smoke"></span></button>
+            <button class="candle" type="button" aria-label="Candle 10 of 18, blow it out"><span class="flame"></span><span class="smoke"></span></button>
+            <button class="candle" type="button" aria-label="Candle 11 of 18, blow it out"><span class="flame"></span><span class="smoke"></span></button>
+            <button class="candle" type="button" aria-label="Candle 12 of 18, blow it out"><span class="flame"></span><span class="smoke"></span></button>
+            <button class="candle" type="button" aria-label="Candle 13 of 18, blow it out"><span class="flame"></span><span class="smoke"></span></button>
+            <button class="candle" type="button" aria-label="Candle 14 of 18, blow it out"><span class="flame"></span><span class="smoke"></span></button>
+            <button class="candle" type="button" aria-label="Candle 15 of 18, blow it out"><span class="flame"></span><span class="smoke"></span></button>
+            <button class="candle" type="button" aria-label="Candle 16 of 18, blow it out"><span class="flame"></span><span class="smoke"></span></button>
+            <button class="candle" type="button" aria-label="Candle 17 of 18, blow it out"><span class="flame"></span><span class="smoke"></span></button>
+            <button class="candle" type="button" aria-label="Candle 18 of 18, blow it out"><span class="flame"></span><span class="smoke"></span></button>
+          </div>
+
+          <div class="cake-body">
+            <span class="cake-topper" aria-hidden="true">18</span>
+            <span class="sprinkle s1"></span><span class="sprinkle s2"></span><span class="sprinkle s3"></span>
+            <span class="sprinkle s4"></span><span class="sprinkle s5"></span><span class="sprinkle s6"></span>
+            <span class="sprinkle s7"></span><span class="sprinkle s8"></span><span class="sprinkle s9"></span>
+          </div>
+
+          <div class="cake-plate" aria-hidden="true"></div>
+        </div>
+
+        <p class="cake-status" id="cake-status" aria-live="polite">18 candles still lit.</p>
+        <p class="cake-hint">
+          <button class="linkish" type="button" id="blow-all">Blow them all out at once</button>
+          <span class="hint-sep" id="hint-sep" aria-hidden="true" hidden>·</span>
+          <button class="linkish" type="button" id="relight" hidden>Light them again</button>
+        </p>
+
+        <div class="wish-card" id="wish-card" aria-hidden="true">
+          <p class="wish-eyebrow">Wish made</p>
+          <p class="wish-text">I'm not allowed to know what you wished for, but I hope you get it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ──────────────────────────── CALL ME ──────────────────────────── -->
+  <section class="section" id="call">
+    <div class="wrap">
+      <header class="section-head reveal">
+        <p class="eyebrow">Last thing</p>
+        <h2>Call me whenever</h2>
+        <p class="section-sub">I'm free all day. Just message me first so I'm not mid-mouthful.</p>
+      </header>
+
+      <div class="call-grid reveal">
+        <div class="clock-card">
+          <p class="clock-label">Your time <span>· Manila</span></p>
+          <p class="clock-time" data-tz="Asia/Manila" id="clock-her">--:--</p>
+          <p class="clock-day" data-tz="Asia/Manila" data-part="day">—</p>
+          <p class="clock-status" data-tz="Asia/Manila" data-part="status"></p>
+        </div>
+        <div class="clock-card">
+          <p class="clock-label">My time <span>· Sydney</span></p>
+          <p class="clock-time" data-tz="Australia/Sydney" id="clock-me">--:--</p>
+          <p class="clock-day" data-tz="Australia/Sydney" data-part="day">—</p>
+          <p class="clock-status" data-tz="Australia/Sydney" data-part="status"></p>
+        </div>
+      </div>
+
+      <div class="call-note reveal">
+        <p>Different clocks, same day, mostly. Ring me, text me, or send me a photo of your cake
+          and I'll reply way too fast. I mean it, I'm around all day.</p>
+        <p class="call-tags">
+          <span>free all day</span>
+          <span>I'll pick up</span>
+          <span>yes, even at 3am</span>
+        </p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <p class="footer-script">happy 18th, chud</p>
+    <p class="footer-meta">Made by me, for you. Have a good one.</p>
+    <a class="to-top" href="#top">Back to the top <span aria-hidden="true">↑</span></a>
+  </div>
+</footer>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" aria-hidden="true">
+  <button class="lb-close" type="button" id="lb-close" aria-label="Close photo viewer">✕</button>
+  <button class="lb-nav lb-prev" type="button" id="lb-prev" aria-label="Previous photo">‹</button>
+  <figure class="lb-figure">
+    <img id="lb-img" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" />
+    <figcaption id="lb-caption"></figcaption>
+  </figure>
+  <button class="lb-nav lb-next" type="button" id="lb-next" aria-label="Next photo">›</button>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="script.js"></script>
+</body>
+</html>

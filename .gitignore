@@ -1,0 +1,13 @@
+# Raw originals from the iCloud zip: private material (DM screenshots, a student ID
+# video) and ~130MB of sources. The site only uses assets/img/. Kept local only.
+photos_raw/
+*.zip
+
+# Local QA + scratch tooling (screenshots, headless-chrome harness)
+qa/
+_lead/
+
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
