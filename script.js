@@ -82,6 +82,7 @@
   var dpr = 1;
 
   var PALETTE = ["#e9c48c", "#f6dfb6", "#f0a8b9", "#e88fa8", "#f7efe3", "#c9b3ea", "#ffd479"];
+  var showerTimer = null;
 
   function sizeCanvas() {
     if (!canvas) return;
@@ -92,27 +93,31 @@
     canvas.style.height = window.innerHeight + "px";
     if (ctx) ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
   }
-
   function addParticle(x, y, opts) {
     opts = opts || {};
-    var angle = opts.angle !== undefined ? opts.angle : Math.random() * Math.PI * 2;
-    var speed = opts.speed !== undefined ? opts.speed : 3 + Math.random() * 7;
-    var isRound = Math.random() < 0.22;
+    var angle = (opts.angle !== undefined ? opts.angle : Math.random() * Math.PI * 2) +
+                (Math.random() - 0.5) * (opts.spread || 0);
+    var speed = opts.speed !== undefined ? opts.speed : 7 + Math.random() * 7;
+    var roll = Math.random();
+    var isRound = roll < 0.15;
+    var isRibbon = !isRound && roll < 0.5;
     particles.push({
       x: x,
       y: y,
       vx: Math.cos(angle) * speed,
       vy: Math.sin(angle) * speed - (opts.lift || 0),
-      w: isRound ? 4 + Math.random() * 3 : 5 + Math.random() * 7,
-      h: isRound ? 0 : 7 + Math.random() * 9,
+      w: isRound ? 4 + Math.random() * 2.5 : (isRibbon ? 3 + Math.random() * 2.5 : 6 + Math.random() * 5),
+      h: isRound ? 0 : (isRibbon ? 12 + Math.random() * 8 : 6 + Math.random() * 6),
       round: isRound,
       rot: Math.random() * Math.PI * 2,
-      vr: (Math.random() - 0.5) * 0.28,
+      vr: (Math.random() - 0.5) * 0.3,
       color: PALETTE[(Math.random() * PALETTE.length) | 0],
       life: 0,
-      maxLife: 130 + Math.random() * 120,
+      maxLife: 170 + Math.random() * 120,
       drag: 0.988,
-      grav: 0.13 + Math.random() * 0.08
+      grav: 0.16 + Math.random() * 0.09,
+      sway: isRound ? 0 : 0.5 + Math.random() * 1.6,
+      phase: Math.random() * Math.PI * 2
     });
   }
 
@@ -137,17 +142,18 @@
       var p = particles[i];
       p.vx *= p.drag;
       p.vy = p.vy * p.drag + p.grav;
-      p.x += p.vx;
+      // a bit of drift so the strips fall like paper instead of like shrapnel
+      p.x += p.vx + (p.sway ? Math.sin(p.life * 0.09 + p.phase) * p.sway : 0);
       p.y += p.vy;
       p.rot += p.vr;
       p.life++;
 
-      if (p.life > p.maxLife || p.y > window.innerHeight + 60) {
+      if (p.life > p.maxLife || p.y > window.innerHeight + 70) {
         particles.splice(i, 1);
         continue;
       }
 
-      var fade = p.life > p.maxLife - 40 ? Math.max(0, (p.maxLife - p.life) / 40) : 1;
+      var fade = p.life > p.maxLife - 45 ? Math.max(0, (p.maxLife - p.life) / 45) : 1;
       ctx.save();
       ctx.globalAlpha = fade;
       ctx.translate(p.x, p.y);
@@ -158,7 +164,9 @@
         ctx.arc(0, 0, p.w / 2, 0, Math.PI * 2);
         ctx.fill();
       } else {
-        ctx.fillRect(-p.w / 2, -p.h / 2, p.w, Math.abs(p.h * Math.cos(p.rot * 0.6)) + 2);
+        // flip the strip through its own axis so it reads as tumbling paper
+        var hh = Math.max(2, Math.abs(p.h * Math.cos(p.rot * 0.8)));
+        ctx.fillRect(-p.w / 2, -hh / 2, p.w, hh);
       }
       ctx.restore();
     }
@@ -170,19 +178,52 @@
     }
   }
 
+  /* Two corner poppers, aimed up and inwards. Reads as a party popper rather
+     than a hollow ring of specks across the headline. */
+  function confettiPoppers() {
+    if (!ctx || reduceMotion) return;
+    var w = window.innerWidth;
+    var h = window.innerHeight;
+    var count = w < 640 ? 45 : 85;
+    burst(w * 0.03, h * 0.98, count, { angle: -Math.PI / 3.15, spread: 0.8, speed: 13, lift: 2 });
+    burst(w * 0.97, h * 0.98, count, { angle: -2 * Math.PI / 3.15, spread: 0.8, speed: 13, lift: 2 });
+  }
+
+  /* A short, light shower from the top edge. Stops itself after ~1.2s. */
+  function confettiShower(ms) {
+    if (!ctx || reduceMotion) return;
+    if (showerTimer !== null) return;
+    var w = window.innerWidth;
+    var started = Date.now();
+    showerTimer = setInterval(function () {
+      if (Date.now() - started > (ms || 1200)) {
+        clearInterval(showerTimer);
+        showerTimer = null;
+        return;
+      }
+      for (var i = 0; i < 4; i++) {
+        burst(Math.random() * w, -20, 1, {
+          angle: Math.PI / 2 + (Math.random() - 0.5) * 0.6,
+          speed: 1 + Math.random() * 2
+        });
+      }
+    }, 110);
+  }
+
+  function confettiCelebrate(withShower) {
+    confettiPoppers();
+    if (withShower) confettiShower(1400);
+  }
+
   function initConfetti() {
     if (!canvas) return;
     sizeCanvas();
     window.addEventListener("resize", sizeCanvas, { passive: true });
 
     if (!reduceMotion) {
-      setTimeout(function () {
-        burst(window.innerWidth * 0.5, window.innerHeight * 0.34, 120, { speed: 8, lift: 1 });
-      }, 850);
+      setTimeout(function () { confettiCelebrate(true); }, 800);
     }
-  }
-
-  /* ---------------------------------------------------------
+  }  /* ---------------------------------------------------------
      4. Gallery lightbox
      --------------------------------------------------------- */
   function initLightbox() {
@@ -298,9 +339,7 @@
         relight.hidden = false;
         if (hintSep) hintSep.hidden = false;
         if (!reduceMotion) {
-          setTimeout(function () {
-            burst(window.innerWidth * 0.5, window.innerHeight * 0.55, 150, { speed: 9, lift: 1 });
-          }, 220);
+          setTimeout(function () { confettiCelebrate(false); }, 220);
         }
         toast("Wish made. Happy 18th, Cara 🎂", 4200);
       }
